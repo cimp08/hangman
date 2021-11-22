@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hangman</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="row">
+      <h1>Hangman</h1>
+      <p>Find the secret word- by guessing a letter!</p>
+
+      <div class="container">
+        <!-- Displays the hangman picture-->
+        <div class="image__container">
+          <img id="hangman-picture" src="images/h0.png" alt="" />
+        </div>
+        <!-- Displays the guesses-->
+        <div class="wrong-container">
+          <div id="wrong-letters">
+            <p>You guessed:</p>
+            <p><span id="life"></span> out of <span id="max-guess"></span></p>
+          </div>
+        </div>
+      </div>
+      <!-- Displays the secret word-->
+      <div class="word" id="word"></div>
+      <!-- Displays the key buttons-->
+      <div class="buttons__container"></div>
+
+      <!-- Container for final message-->
+      <div class="popup-container" id="popup-container">
+        <div class="popup" id="popup">
+          <h2 id="final-message"></h2>
+          <button id="play-again" class="buttons">Play Again</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
