@@ -36,6 +36,7 @@ function generateRandomWord() {
 
 // Generates the buttons from a-z
 function generateKeyButtons() {
+  buttonContainer.innerHTML = "";
   const letters = "abcdefghijklmnopqrstuvwxyz".split("");
   for (let i = 0; i < letters.length; i++) {
     const btn = document.createElement("button");
@@ -47,8 +48,18 @@ function generateKeyButtons() {
   }
 }
 
+// Reset all the values
 function resetValues() {
-  console.log("test");
+  popupContainer.style.display = "none";
+  correctLetters = [];
+  wrongLetters = [];
+  randomWord = "";
+  document.getElementById(
+    "hangman-picture"
+  ).src = `images/h${wrongLetters.length}.png`;
+  generateRandomWord();
+  generateKeyButtons();
+  displayBoard();
 }
 
 function handleGuess(event) {
