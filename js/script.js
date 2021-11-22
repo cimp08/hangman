@@ -29,8 +29,11 @@ let wrongLetters = [];
 let randomWord = "";
 const lifes = 6;
 
+maxGuess.innerText = lifes;
+
 // Generates a randomWord from wordList
 function generateRandomWord() {
+  guesses.innerText = 0;
   randomWord = wordList[Math.floor(Math.random() * wordList.length)].split("");
 }
 
@@ -76,7 +79,7 @@ function handleGuess(event) {
     const test = wordEl.innerText.replaceAll("\n", "");
     if (test.split("").length === randomWord.length) {
       popupContainer.style.display = "flex";
-      popup.style.backgroundColor = "green";
+      popup.style.backgroundColor = "#9bff96";
       finalMessage.textContent = `You won! Secret word: ${randomWord.join("")}`;
       document
         .getElementById("play-again")
@@ -86,6 +89,7 @@ function handleGuess(event) {
   // If guessed letter is not correct it pushes the letter in wrongLetters, updates guesses and updates the hangman picture.
   else {
     wrongLetters.push(event.target.id);
+    guesses.innerText = wrongLetters.length;
     document.getElementById(
       "hangman-picture"
     ).src = `images/h${wrongLetters.length}.png`;
@@ -93,7 +97,7 @@ function handleGuess(event) {
     // Then see if player have lost
     if (wrongLetters.length === lifes) {
       popupContainer.style.display = "flex";
-      popup.style.backgroundColor = "red";
+      popup.style.backgroundColor = "#ff5555";
       finalMessage.textContent = `You lost! Secret word: ${randomWord.join(
         ""
       )}`;
