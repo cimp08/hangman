@@ -51,5 +51,17 @@ function handleGuess() {
   console.log("test");
 }
 
+function displayBoard() {
+  // Show the hidden word and empty underlines
+  wordEl.innerHTML = "";
+  for (const letter of randomWord) {
+    const span = document.createElement("span");
+    span.classList.add("letter");
+    span.innerHTML = correctLetters.includes(letter) ? letter : "";
+    wordEl.appendChild(span);
+  }
+}
+
 generateRandomWord();
 generateKeyButtons();
+displayBoard();
