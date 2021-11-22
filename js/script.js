@@ -28,3 +28,28 @@ let correctLetters = [];
 let wrongLetters = [];
 let randomWord = "";
 const lifes = 6;
+
+// Generates a randomWord from wordList
+function generateRandomWord() {
+  randomWord = wordList[Math.floor(Math.random() * wordList.length)].split("");
+}
+
+// Generates the buttons from a-z
+function generateKeyButtons() {
+  const letters = "abcdefghijklmnopqrstuvwxyz".split("");
+  for (let i = 0; i < letters.length; i++) {
+    const btn = document.createElement("button");
+    btn.id = letters[i];
+    btn.innerHTML = letters[i];
+    btn.classList.add("buttons");
+    btn.addEventListener("click", handleGuess);
+    buttonContainer.appendChild(btn);
+  }
+}
+
+function handleGuess() {
+  console.log("test");
+}
+
+generateRandomWord();
+generateKeyButtons();
