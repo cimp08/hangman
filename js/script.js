@@ -35,7 +35,6 @@ guesses.innerText = wrongLetters.length;
 // Generates a randomWord from wordList
 function generateRandomWord() {
   randomWord = wordList[Math.floor(Math.random() * wordList.length)].split("");
-  alert(randomWord);
 }
 
 // Generates the buttons from a-z
@@ -76,14 +75,12 @@ function handleGuess(event) {
     displayBoard();
 
     // Then see if player have won
-    const test = wordEl.innerText.replaceAll("\n", "");
-    if (test.split("").length === randomWord.length) {
+    const randomWordCheck = wordEl.innerText.replaceAll("\n", "");
+    if (randomWordCheck.split("").length === randomWord.length) {
       popupContainer.style.display = "flex";
       popup.style.backgroundColor = "#9bff96";
       finalMessage.textContent = `You won! Secret word: ${randomWord.join("")}`;
-      document
-        .getElementById("play-again")
-        .addEventListener("click", resetValues);
+      playAgainBtn.addEventListener("click", resetValues);
     }
   }
   // If guessed letter is not correct it pushes the letter in wrongLetters, updates guesses and updates the hangman picture.
@@ -99,9 +96,7 @@ function handleGuess(event) {
       finalMessage.textContent = `You lost! Secret word: ${randomWord.join(
         ""
       )}`;
-      document
-        .getElementById("play-again")
-        .addEventListener("click", resetValues);
+      playAgainBtn.addEventListener("click", resetValues);
     }
   }
 }
