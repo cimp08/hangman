@@ -29,6 +29,10 @@ body {
   align-items: center;
 }
 
+header {
+  text-align: center;
+}
+
 h1 {
   margin: 2rem 0;
   text-transform: uppercase;
