@@ -30,10 +30,10 @@ let randomWord = "";
 const lifes = 6;
 
 maxGuess.innerText = lifes;
+guesses.innerText = wrongLetters.length;
 
 // Generates a randomWord from wordList
 function generateRandomWord() {
-  guesses.innerText = 0;
   randomWord = wordList[Math.floor(Math.random() * wordList.length)].split("");
 }
 
@@ -57,9 +57,8 @@ function resetValues() {
   correctLetters = [];
   wrongLetters = [];
   randomWord = "";
-  document.getElementById(
-    "hangman-picture"
-  ).src = `images/h${wrongLetters.length}.png`;
+  guesses.innerText = wrongLetters.length;
+  hangmanPicture.src = `images/h${wrongLetters.length}.png`;
   generateRandomWord();
   generateKeyButtons();
   displayBoard();
@@ -90,9 +89,7 @@ function handleGuess(event) {
   else {
     wrongLetters.push(event.target.id);
     guesses.innerText = wrongLetters.length;
-    document.getElementById(
-      "hangman-picture"
-    ).src = `images/h${wrongLetters.length}.png`;
+    hangmanPicture.src = `images/h${wrongLetters.length}.png`;
 
     // Then see if player have lost
     if (wrongLetters.length === lifes) {
