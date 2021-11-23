@@ -9,34 +9,36 @@
   </head>
   <body>
     <div class="row">
-      <h1>Hangman</h1>
-      <p>Find the secret word- by guessing a letter!</p>
+      <header>
+        <h1>Hangman</h1>
+        <h2>Find the secret word!</h2>
+      </header>
 
       <div class="container">
         <!-- Displays the hangman picture-->
-        <div class="image__container">
-          <img id="hangman-picture" src="images/h0.png" alt="" />
-        </div>
+        <section class="image__container">
+          <img id="hangman-picture" src="images/h0.png" alt="Hangman picture" />
+        </section>
         <!-- Displays the guesses-->
-        <div class="wrong-container">
+        <section class="wrong-container">
           <div id="wrong-letters">
             <p>You guessed:</p>
             <p><span id="life"></span> out of <span id="max-guess"></span></p>
           </div>
-        </div>
+        </section>
       </div>
       <!-- Displays the secret word-->
-      <div class="word" id="word"></div>
+      <section class="word" id="word"></section>
       <!-- Displays the key buttons-->
-      <div class="buttons__container"></div>
+      <section class="buttons__container"></section>
 
       <!-- Container for final message-->
-      <div class="popup-container" id="popup-container">
+      <section class="popup-container" id="popup-container">
         <div class="popup" id="popup">
-          <h2 id="final-message"></h2>
+          <h3 id="final-message"></h3>
           <button id="play-again" class="buttons">Play Again</button>
         </div>
-      </div>
+      </section>
     </div>
 
     <script src="js/script.js"></script>
