@@ -35,20 +35,21 @@ guesses.innerText = wrongLetters.length;
 // Generates a randomWord from wordList
 function generateRandomWord() {
   randomWord = wordList[Math.floor(Math.random() * wordList.length)].split("");
+  alert(randomWord);
 }
 
 // Generates the buttons from a-z
 function generateKeyButtons() {
   buttonContainer.innerHTML = "";
   const letters = "abcdefghijklmnopqrstuvwxyz".split("");
-  for (let i = 0; i < letters.length; i++) {
+  letters.forEach((letter) => {
     const btn = document.createElement("button");
-    btn.id = letters[i];
-    btn.innerHTML = letters[i];
+    btn.id = letter;
+    btn.innerHTML = letter;
     btn.classList.add("buttons");
     btn.addEventListener("click", handleGuess);
     buttonContainer.appendChild(btn);
-  }
+  });
 }
 
 // Reset all the values
