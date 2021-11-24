@@ -73,7 +73,7 @@ h1 {
   border-bottom: 3px solid #000;
   text-align: center;
   font-size: 3rem;
-  margin: 2rem 2rem;
+  margin: 2.5rem 2rem;
   height: 5rem;
   width: 2rem;
 }
@@ -81,7 +81,7 @@ h1 {
 @media only screen and (max-width: 445px) {
   .letter {
     font-size: 2rem;
-    margin: 1rem 1rem;
+    margin: 4rem 1rem;
   }
 }
 
@@ -105,8 +105,32 @@ h1 {
 @media only screen and (max-width: 445px) {
   .popup {
     padding: 1rem;
-    font-size: 1.6rem;
   }
+}
+
+.display-secretword {
+  margin: 1rem 0;
+}
+
+.play-again {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 2rem;
+  border-radius: 0.8rem;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+  border: 1px solid #222222;
+  transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s,
+    -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
+  background: #fff;
+  color: #222222;
+}
+
+.play-again:hover {
+  border-color: #000000;
+  background: #f7f7f7;
 }
 
 .buttons__container {
@@ -120,17 +144,23 @@ h1 {
   box-shadow: inset 0px 1px 0px 0px #ffffff;
   background: linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
   background-color: #ffffff;
-  border-radius: 6px;
+  border-radius: 0.6rem;
   border: 1px solid #606060;
   display: inline-block;
   cursor: pointer;
   color: #666666;
   font-family: inherit;
-  font-size: 20px;
-  padding: 6px 8px;
+  font-size: 2rem;
+  padding: 0.6rem 0.8rem;
   margin: 0.5rem;
   text-decoration: none;
   text-shadow: 0px 1px 0px #ffffff;
+}
+
+@media only screen and (max-width: 445px) {
+  .buttons {
+    margin: 1rem;
+  }
 }
 
 .clicked {
