@@ -1,4 +1,4 @@
-# U03 - Hangman
+# Hangman
 
 Author: Cemil Ülay
 
